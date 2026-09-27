@@ -1,0 +1,60 @@
+<!DOCTYPE html><html>
+<head>
+    <title>Username & Password Verification</title>
+</head>
+<body><h2>Username & Password Verification</h2>
+
+<label>ENTER YOUR NAME:</label>
+<input type="text" id="name">
+
+<br><br>
+
+<label>CONFIRM YOUR NAME:</label>
+<input type="text" id="confirmName">
+
+<br><br>
+
+<label>ENTER YOUR PASSWORD:</label>
+<input type="password" id="password">
+
+<br><br>
+
+<label>CONFIRM YOUR PASSWORD:</label>
+<input type="password" id="confirmPassword">
+
+<br><br>
+
+<button onclick="checkDetails()">SUBMIT</button>
+
+<p id="result"></p>
+
+<script>
+    function checkDetails() {
+
+        let name = document.getElementById("name").value;
+        let confirmName = document.getElementById("confirmName").value;
+
+        let password = document.getElementById("password").value;
+        let confirmPassword = document.getElementById("confirmPassword").value;
+
+        let result = document.getElementById("result");
+
+        // Check username
+        if (name === confirmName) {
+            result.innerHTML = "WELCOME " + name + "!!!<br>";
+        } else {
+            result.innerHTML = "USERNAME DOES NOT MATCH!!!<br>";
+            return;
+        }
+
+        // Check password
+        if (password === confirmPassword) {
+            result.innerHTML += "YOUR PASSWORD IS CORRECT!!";
+        } else {
+            result.innerHTML += "YOUR PASSWORD IS INCORRECT!!";
+        }
+    }
+</script>
+
+</body>
+</html>
